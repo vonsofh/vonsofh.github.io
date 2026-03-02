@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../data/site.json';
+import { getCollection, render } from 'astro:content';
+import { isEnVariant, baseSlug } from '../../content.config';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  const idProjects = projects.filter((p) => !isEnVariant(p.id));
+  const enProjects = projects.filter((p) => isEnVariant(p.id));
+
+  return idProjects.map((project) => {
+    const enProject = enProjects.find((p) => baseSlug(p.id) === project.id) || null;
+    return {
+      params: { slug: project.id },
+      props: { project, enProject },
+    };
+  });
+}
+
+const { project, enProject } = Astro.props;
+const { Content: IdContent } = await render(project);
+const EnContent = enProject ? (await render(enProject)).Content : null;
+
+const dateId = project.data.publishedAt.toLocaleDateString('id-ID', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const dateEn = project.data.publishedAt.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout
+  title={`${project.data.title} — ${site.title}`}
+  description={project.data.summary}
+  image={project.data.image}
+>
+  <article class="mx-auto max-w-5xl px-6 py-16 md:py-24">
+    <div class="animate-fade-in-up">
+      <!-- Back link -->
+      <a href="/projects" class="text-sm font-medium text-primary hover:underline">
+        &larr; <span data-i18n-id>Semua Proyek</span><span data-i18n-en>All Projects</span>
+      </a>
+
+      <h1 class="mt-6 text-3xl font-extrabold tracking-tight text-text dark:text-white sm:text-4xl">
+        <span data-i18n-id>{project.data.title}</span>
+        {enProject && <span data-i18n-en>{enProject.data.title}</span>}
+      </h1>
+    </div>
+
+    <div class="mt-4 flex flex-wrap items-center gap-4 text-sm text-text-muted dark:text-slate-400 scroll-reveal">
+      {project.data.role && (
+        <span>
+          <span data-i18n-id>{project.data.role}</span>
+          {enProject?.data.role && <span data-i18n-en>{enProject.data.role}</span>}
+        </span>
+      )}
+      {project.data.timeframe && (
+        <span>
+          &bull; <span data-i18n-id>{project.data.timeframe}</span>
+          {enProject?.data.timeframe && <span data-i18n-en>{enProject.data.timeframe}</span>}
+        </span>
+      )}
+      <span>
+        &bull; <span data-i18n-id>{dateId}</span>
+        <span data-i18n-en>{dateEn}</span>
+      </span>
+    </div>
+
+    <!-- Tech stack -->
+    {project.data.stack.length > 0 && (
+      <div class="mt-4 flex flex-wrap gap-1.5 scroll-reveal" style="transition-delay: 0.05s">
+        {project.data.stack.map((tech: string) => (
+          <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            {tech}
+          </span>
+        ))}
+      </div>
+    )}
+
+    <!-- Links -->
+    <div class="mt-6 flex flex-wrap gap-3 scroll-reveal" style="transition-delay: 0.1s">
+      {project.data.github && (
+        <a
+          href={project.data.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center rounded-lg border border-border dark:border-slate-600 px-4 py-2 text-sm font-medium text-text dark:text-slate-200 hover:bg-surface dark:hover:bg-slate-800 transition-colors"
+        >
+          <svg class="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          <span data-i18n-id>Kode Sumber</span><span data-i18n-en>Source Code</span>
+        </a>
+      )}
+      {project.data.demo && (
+        <a
+          href={project.data.demo}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
+        >
+          <span data-i18n-id>Demo Langsung</span><span data-i18n-en>Live Demo</span> &rarr;
+        </a>
+      )}
+    </div>
+
+    <!-- Hero image -->
+    {project.data.image && (
+      <div class="scroll-reveal" style="transition-delay: 0.15s">
+        <img
+          src={project.data.image}
+          alt={project.data.title}
+          class="mt-8 w-full rounded-xl border border-border dark:border-slate-700"
+          loading="lazy"
+        />
+      </div>
+    )}
+
+    <!-- Content: ID -->
+    <div data-i18n-id class="prose mt-10 scroll-reveal" style="transition-delay: 0.2s">
+      <IdContent />
+    </div>
+
+    <!-- Content: EN -->
+    {EnContent && (
+      <div data-i18n-en class="prose mt-10 scroll-reveal" style="transition-delay: 0.2s">
+        <EnContent />
+      </div>
+    )}
+  </article>
+</BaseLayout>

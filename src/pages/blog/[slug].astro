@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../data/site.json';
+import { getCollection, render } from 'astro:content';
+import { isEnVariant, baseSlug } from '../../content.config';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  // Only generate pages for base (ID) entries
+  const idPosts = posts.filter((p) => !isEnVariant(p.id) && !p.data.draft);
+  const enPosts = posts.filter((p) => isEnVariant(p.id) && !p.data.draft);
+
+  return idPosts.map((post) => {
+    const enPost = enPosts.find((p) => baseSlug(p.id) === post.id) || null;
+    return {
+      params: { slug: post.id },
+      props: { post, enPost },
+    };
+  });
+}
+
+const { post, enPost } = Astro.props;
+const { Content: IdContent } = await render(post);
+const EnContent = enPost ? (await render(enPost)).Content : null;
+
+const dateId = post.data.publishedAt.toLocaleDateString('id-ID', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const dateEn = post.data.publishedAt.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout
+  title={`${post.data.title} — ${site.title}`}
+  description={post.data.description}
+  image={post.data.image}
+>
+  <article class="mx-auto max-w-5xl px-6 py-16 md:py-24">
+    <div class="animate-fade-in-up">
+      <!-- Back link -->
+      <a href="/blog" class="text-sm font-medium text-primary hover:underline">
+        &larr; <span data-i18n-id>Semua Tulisan</span><span data-i18n-en>All Posts</span>
+      </a>
+
+      <h1 class="mt-6 text-3xl font-extrabold tracking-tight text-text dark:text-white sm:text-4xl">
+        <span data-i18n-id>{post.data.title}</span>
+        {enPost && <span data-i18n-en>{enPost.data.title}</span>}
+      </h1>
+    </div>
+
+    <div class="mt-4 flex flex-wrap items-center gap-3 text-sm text-text-muted dark:text-slate-400 scroll-reveal">
+      <time datetime={post.data.publishedAt.toISOString()}>
+        <span data-i18n-id>{dateId}</span>
+        <span data-i18n-en>{dateEn}</span>
+      </time>
+      {post.data.tags.length > 0 && (
+        <span class="flex gap-1.5">
+          &bull;
+          {post.data.tags.map((tag: string) => (
+            <span class="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">
+              {tag}
+            </span>
+          ))}
+        </span>
+      )}
+    </div>
+
+    {post.data.image && (
+      <div class="scroll-reveal" style="transition-delay: 0.1s">
+        <img
+          src={post.data.image}
+          alt={post.data.title}
+          class="mt-8 w-full rounded-xl border border-border dark:border-slate-700"
+          loading="lazy"
+        />
+      </div>
+    )}
+
+    <!-- Content: ID -->
+    <div data-i18n-id class="prose mt-10 scroll-reveal" style="transition-delay: 0.15s">
+      <IdContent />
+    </div>
+
+    <!-- Content: EN -->
+    {EnContent && (
+      <div data-i18n-en class="prose mt-10 scroll-reveal" style="transition-delay: 0.15s">
+        <EnContent />
+      </div>
+    )}
+
+    <!-- Post footer -->
+    <div class="mt-16 border-t border-border dark:border-slate-700 pt-8 scroll-reveal" style="transition-delay: 0.2s">
+      <a href="/blog" class="text-sm font-medium text-primary hover:underline">
+        &larr; <span data-i18n-id>Kembali ke Blog</span><span data-i18n-en>Back to Blog</span>
+      </a>
+    </div>
+  </article>
+</BaseLayout>

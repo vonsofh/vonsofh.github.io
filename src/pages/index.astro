@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import BlogCard from '../components/BlogCard.astro';
+import site from '../data/site.json';
+import { getCollection } from 'astro:content';
+import { isEnVariant, baseSlug } from '../content.config';
+
+const allProjectEntries = await getCollection('projects');
+const enProjectMap = new Map(
+  allProjectEntries.filter((p) => isEnVariant(p.id)).map((p) => [baseSlug(p.id), p])
+);
+const featuredProjects = allProjectEntries
+  .filter((p) => !isEnVariant(p.id) && p.data.featured)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
+
+const allBlogEntries = await getCollection('blog');
+const enBlogMap = new Map(
+  allBlogEntries.filter((p) => isEnVariant(p.id) && !p.data.draft).map((p) => [baseSlug(p.id), p])
+);
+const latestPosts = allBlogEntries
+  .filter((p) => !isEnVariant(p.id) && !p.data.draft)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <section class="mx-auto max-w-5xl px-6 py-20 md:py-28">
+    <p class="text-sm font-semibold uppercase tracking-widest text-accent animate-fade-in-up">
+      <span data-i18n-id>Halo, Saya</span><span data-i18n-en>Hello, I'm</span>
+    </p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-text dark:text-white sm:text-5xl md:text-6xl animate-fade-in-up" style="animation-delay: 0.1s">
+      {site.name}
+    </h1>
+    <p class="mt-4 max-w-2xl text-lg text-text-muted dark:text-slate-400 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s">
+      <span data-i18n-id>Portofolio dan blog personal oleh Vonso FH. Proyek, pengalaman, dan wawasan seputar pengembangan web.</span>
+      <span data-i18n-en>Personal portfolio and blog by Vonso FH. Projects, experience, and insights on web development.</span>
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay: 0.3s">
+      <a
+        href="/projects"
+        class="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-dark"
+      >
+        <span data-i18n-id>Lihat Proyek</span><span data-i18n-en>View Projects</span>
+      </a>
+      <a
+        href="/contact"
+        class="inline-flex items-center rounded-lg border border-border dark:border-slate-600 px-6 py-3 text-sm font-semibold text-text dark:text-slate-200 transition-colors hover:bg-surface dark:hover:bg-slate-800"
+      >
+        <span data-i18n-id>Hubungi Saya</span><span data-i18n-en>Get in Touch</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  {featuredProjects.length > 0 && (
+    <section class="mx-auto max-w-5xl px-6 pb-16 scroll-reveal">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold text-text dark:text-white">
+          <span data-i18n-id>Proyek Unggulan</span><span data-i18n-en>Featured Projects</span>
+        </h2>
+        <a href="/projects" class="text-sm font-medium text-primary hover:underline">
+          <span data-i18n-id>Lihat semua</span><span data-i18n-en>View all</span> &rarr;
+        </a>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {featuredProjects.map((project) => {
+          const en = enProjectMap.get(project.id);
+          return (
+            <ProjectCard
+              title={project.data.title}
+              summary={project.data.summary}
+              titleEn={en?.data.title}
+              summaryEn={en?.data.summary}
+              stack={project.data.stack}
+              image={project.data.image}
+              slug={project.id}
+            />
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <!-- Latest Blog Posts -->
+  {latestPosts.length > 0 && (
+    <section class="mx-auto max-w-5xl px-6 pb-20 scroll-reveal">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold text-text dark:text-white">
+          <span data-i18n-id>Postingan Terbaru</span><span data-i18n-en>Latest Posts</span>
+        </h2>
+        <a href="/blog" class="text-sm font-medium text-primary hover:underline">
+          <span data-i18n-id>Baca semua</span><span data-i18n-en>Read all</span> &rarr;
+        </a>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {latestPosts.map((post) => {
+          const en = enBlogMap.get(post.id);
+          return (
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              titleEn={en?.data.title}
+              descriptionEn={en?.data.description}
+              publishedAt={post.data.publishedAt}
+              tags={post.data.tags}
+              slug={post.id}
+            />
+          );
+        })}
+      </div>
+    </section>
+  )}
+</BaseLayout>

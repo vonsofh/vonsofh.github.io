@@ -1,0 +1,16 @@
+[
+  {
+    "company": "Acme Corp",
+    "role": "Full Stack Developer",
+    "period": "Jan 2024 — Present",
+    "description": "Built and maintained web applications using Laravel, React, and PostgreSQL. Led migration of legacy PHP monolith to a modern microservices architecture.",
+    "stack": ["Laravel", "React", "PostgreSQL", "Docker"]
+  },
+  {
+    "company": "Startup XYZ",
+    "role": "Junior Developer",
+    "period": "Jun 2022 — Dec 2023",
+    "description": "Developed REST APIs and responsive front-end interfaces. Collaborated in an agile team delivering features on a two-week sprint cycle.",
+    "stack": ["PHP", "Vue.js", "MySQL"]
+  }
+]
