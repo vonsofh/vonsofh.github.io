@@ -19,9 +19,9 @@ export const translations = {
 
     // About
     "about.title": "Tentang Saya",
-    "about.subtitle": "Software Engineer dengan 4+ tahun pengalaman membangun sistem SaaS multi-tenant.",
-    "about.bio1": "Fullstack Software Engineer yang berspesialisasi dalam arsitektur SaaS berbasis Laravel. Saya memiliki pengalaman 4+ tahun merancang dan membangun sistem multi-tenant, payment gateway, serta platform bisnis yang terintegrasi dengan infrastruktur jaringan (Mikrotik API).",
-    "about.bio2": "Saya telah mengembangkan 23+ proyek profesional mulai dari sistem POS, payment hub, WMS, HRIS, hingga aplikasi cross-platform. Fokus utama saya adalah membangun sistem yang skalabel, aman, dan mudah dipelihara untuk kebutuhan bisnis nyata.",
+    "about.subtitle": "Software Engineer dengan 6+ tahun pengalaman membangun sistem SaaS multi-tenant.",
+    "about.bio1": "Fullstack Software Engineer yang berspesialisasi dalam arsitektur SaaS berbasis Laravel. Saya memiliki pengalaman 6+ tahun merancang dan membangun sistem multi-tenant, payment gateway, serta platform bisnis yang terintegrasi dengan infrastruktur jaringan (Mikrotik API).",
+    "about.bio2": "Saya telah mengembangkan 34+ proyek profesional mulai dari sistem POS, payment hub, WMS, HRIS, hingga aplikasi cross-platform. Fokus utama saya adalah membangun sistem yang skalabel, aman, dan mudah dipelihara untuk kebutuhan bisnis nyata.",
     "about.skills": "Keahlian & Teknologi",
     "about.whatIDo": "Spesialisasi",
     "about.fullstack": "Arsitektur SaaS Multi-Tenant",
@@ -36,7 +36,7 @@ export const translations = {
 
     // Projects
     "projects.title": "Proyek",
-    "projects.subtitle": "23+ proyek profesional — dari sistem SaaS, e-commerce, logistik, hingga company profile.",
+    "projects.subtitle": "34+ proyek profesional — dari sistem SaaS, e-commerce, logistik, hingga company profile.",
     "projects.empty": "Belum ada proyek. Nantikan segera!",
     "projects.back": "Semua Proyek",
     "projects.sourceCode": "Kode Sumber",
@@ -80,7 +80,7 @@ export const translations = {
 
     // SEO descriptions
     "seo.about": "Fullstack Software Engineer berspesialisasi dalam arsitektur SaaS Laravel, payment gateway, dan sistem multi-tenant.",
-    "seo.projects": "23+ proyek profesional — SaaS, e-commerce, logistik, cross-platform, dan company profile.",
+    "seo.projects": "34+ proyek profesional — SaaS, e-commerce, logistik, cross-platform, dan company profile.",
     "seo.experience": "Riwayat pekerjaan dan pengalaman profesional saya.",
     "seo.blog": "Artikel, tutorial, dan pemikiran tentang pengembangan web.",
     "seo.contact": "Hubungi saya. Kirim pesan atau hubungi melalui media sosial.",
@@ -105,9 +105,9 @@ export const translations = {
 
     // About
     "about.title": "About Me",
-    "about.subtitle": "Software Engineer with 4+ years of experience building multi-tenant SaaS systems.",
-    "about.bio1": "a Fullstack Software Engineer specializing in Laravel-based SaaS architecture. I have 4+ years of experience designing and building multi-tenant systems, payment gateways, and business platforms integrated with network infrastructure (Mikrotik API).",
-    "about.bio2": "I've developed 23+ professional projects ranging from POS systems, payment hubs, WMS, HRIS, to cross-platform applications. My primary focus is building scalable, secure, and maintainable systems for real business needs.",
+    "about.subtitle": "Software Engineer with 6+ years of experience building multi-tenant SaaS systems.",
+    "about.bio1": "a Fullstack Software Engineer specializing in Laravel-based SaaS architecture. I have 6+ years of experience designing and building multi-tenant systems, payment gateways, and business platforms integrated with network infrastructure (Mikrotik API).",
+    "about.bio2": "I've developed 34+ professional projects ranging from POS systems, payment hubs, WMS, HRIS, to cross-platform applications. My primary focus is building scalable, secure, and maintainable systems for real business needs.",
     "about.skills": "Skills & Technologies",
     "about.whatIDo": "Specializations",
     "about.fullstack": "Multi-Tenant SaaS Architecture",
@@ -122,7 +122,7 @@ export const translations = {
 
     // Projects
     "projects.title": "Projects",
-    "projects.subtitle": "23+ professional projects — from SaaS systems, e-commerce, logistics, to company profiles.",
+    "projects.subtitle": "34+ professional projects — from SaaS systems, e-commerce, logistics, to company profiles.",
     "projects.empty": "No projects yet. Check back soon!",
     "projects.back": "All Projects",
     "projects.sourceCode": "Source Code",
@@ -166,7 +166,7 @@ export const translations = {
 
     // SEO descriptions
     "seo.about": "Fullstack Software Engineer specializing in Laravel SaaS architecture, payment gateways, and multi-tenant systems.",
-    "seo.projects": "23+ professional projects — SaaS, e-commerce, logistics, cross-platform, and company profiles.",
+    "seo.projects": "34+ professional projects — SaaS, e-commerce, logistics, cross-platform, and company profiles.",
     "seo.experience": "My professional work history and experience.",
     "seo.blog": "Articles, tutorials, and thoughts on web development.",
     "seo.contact": "Get in touch with me. Send a message or reach out on social media.",

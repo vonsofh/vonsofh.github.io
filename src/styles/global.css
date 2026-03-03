@@ -17,6 +17,11 @@
 /* Dark mode custom variant */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Ensure pointer cursor on all interactive elements */
+a, button, [role="button"], input[type="submit"], input[type="button"], select, summary {
+  cursor: pointer;
+}
+
 /* Smooth scroll & prevent layout shift from scrollbar */
 html {
   scroll-behavior: smooth;
@@ -45,11 +50,19 @@ html {
   animation: fade-in-up 0.6s ease-out both;
 }
 
-/* Scroll reveal: hidden until observed */
+/* Scroll reveal: visible by default, subtle entrance when observed */
 .scroll-reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  .scroll-reveal {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
 }
 .scroll-reveal.is-visible {
   opacity: 1;

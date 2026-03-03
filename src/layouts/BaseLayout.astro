@@ -63,6 +63,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       (function() {
         var els = document.querySelectorAll('.scroll-reveal');
         if (!els.length) return;
+        // Mark elements already in viewport as visible immediately
         var io = new IntersectionObserver(function(entries) {
           entries.forEach(function(e) {
             if (e.isIntersecting) {
@@ -70,7 +71,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
               io.unobserve(e.target);
             }
           });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
         els.forEach(function(el) { io.observe(el); });
       })();
     </script>
