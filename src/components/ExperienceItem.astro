@@ -2,12 +2,15 @@
 interface Props {
   company: string;
   role: string;
+  roleEn?: string;
   period: string;
+  periodEn?: string;
   description: string;
+  descriptionEn?: string;
   stack?: string[];
 }
 
-const { company, role, period, description, stack = [] } = Astro.props;
+const { company, role, roleEn, period, periodEn, description, descriptionEn, stack = [] } = Astro.props;
 ---
 
 <div class="relative pl-8 pb-8 border-l-2 border-border dark:border-slate-700 last:pb-0">
@@ -16,11 +19,20 @@ const { company, role, period, description, stack = [] } = Astro.props;
 
   <div class="rounded-xl border border-border dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm transition-colors">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-      <h3 class="font-semibold text-text dark:text-slate-200">{role}</h3>
-      <span class="text-xs font-medium text-text-muted dark:text-slate-400">{period}</span>
+      <h3 class="font-semibold text-text dark:text-slate-200">
+        <span data-i18n-id>{role}</span>
+        {roleEn && <span data-i18n-en>{roleEn}</span>}
+      </h3>
+      <span class="text-xs font-medium text-text-muted dark:text-slate-400">
+        <span data-i18n-id>{period}</span>
+        {periodEn && <span data-i18n-en>{periodEn}</span>}
+      </span>
     </div>
     <p class="mt-1 text-sm font-medium text-primary">{company}</p>
-    <p class="mt-3 text-sm text-text-muted dark:text-slate-400 leading-relaxed">{description}</p>
+    <p class="mt-3 text-sm text-text-muted dark:text-slate-400 leading-relaxed">
+      <span data-i18n-id>{description}</span>
+      {descriptionEn && <span data-i18n-en>{descriptionEn}</span>}
+    </p>
     {stack.length > 0 && (
       <div class="mt-3 flex flex-wrap gap-1.5">
         {stack.map((tech) => (

@@ -1,16 +1,32 @@
 [
   {
-    "company": "Acme Corp",
-    "role": "Full Stack Developer",
-    "period": "Jan 2024 — Present",
-    "description": "Built and maintained web applications using Laravel, React, and PostgreSQL. Led migration of legacy PHP monolith to a modern microservices architecture.",
-    "stack": ["Laravel", "React", "PostgreSQL", "Docker"]
+    "company": "PT Skynet Indonesia Madani",
+    "role": "Software Engineer",
+    "roleEn": "Software Engineer",
+    "period": "2021 — Sekarang",
+    "periodEn": "2021 — Present",
+    "description": "Membangun SKYPAY (sistem billing ISP & manajemen perangkat), mengembangkan sistem voucher WiFi terintegrasi Mikrotik, mengintegrasikan payment gateway Tripay, mengelola otomasi perangkat (Router, ONT, OLT), dan memimpin pengembangan software internal termasuk SaaS management tools.",
+    "descriptionEn": "Built SKYPAY (ISP billing & device management system), developed WiFi voucher system integrated with Mikrotik, integrated Tripay payment gateway, managed device automation (Router, ONT, OLT), and led internal software development including SaaS management tools.",
+    "stack": ["Laravel", "PHP", "MySQL", "Mikrotik API", "ElectronJS", "REST API", "Tripay"]
   },
   {
-    "company": "Startup XYZ",
-    "role": "Junior Developer",
-    "period": "Jun 2022 — Dec 2023",
-    "description": "Developed REST APIs and responsive front-end interfaces. Collaborated in an agile team delivering features on a two-week sprint cycle.",
-    "stack": ["PHP", "Vue.js", "MySQL"]
+    "company": "PT Agung Trisula Mandiri",
+    "role": "Laravel Developer",
+    "roleEn": "Laravel Developer",
+    "period": "2021",
+    "periodEn": "2021",
+    "description": "Mengembangkan sistem CRM dengan JWT Authentication dan membangun aplikasi web internal perusahaan.",
+    "descriptionEn": "Developed CRM system with JWT Authentication and built internal company web applications.",
+    "stack": ["Laravel", "PHP", "MySQL", "JWT", "REST API"]
+  },
+  {
+    "company": "Kantor Notaris Titik Aminah",
+    "role": "IT Technician",
+    "roleEn": "IT Technician",
+    "period": "2017 — 2021",
+    "periodEn": "2017 — 2021",
+    "description": "Merancang infrastruktur LAN kantor, membangun sistem administrasi kenotariatan, dan memelihara sistem hardware & jaringan.",
+    "descriptionEn": "Designed office LAN infrastructure, built notary administration system, and maintained hardware & networking systems.",
+    "stack": ["Networking", "LAN", "Hardware", "Administration System"]
   }
 ]

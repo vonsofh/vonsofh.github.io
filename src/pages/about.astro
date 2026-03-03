@@ -3,89 +3,160 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../data/site.json';
 ---
 
-<BaseLayout title={`About — ${site.title}`} description="Learn more about me, my skills, and the tools I work with.">
+<BaseLayout title={`About — ${site.title}`} description="Fullstack Software Engineer specializing in Laravel SaaS architecture, payment gateways, and multi-tenant systems.">
   <section class="mx-auto max-w-5xl px-6 py-16 md:py-24">
     <div class="animate-fade-in-up mb-10">
       <h1 class="text-3xl font-extrabold tracking-tight text-text dark:text-white sm:text-4xl">
         <span data-i18n-id>Tentang Saya</span><span data-i18n-en>About Me</span>
       </h1>
       <p class="mt-3 text-text-muted dark:text-slate-400">
-        <span data-i18n-id>Kenali lebih dekat siapa saya, keahlian yang saya miliki, dan apa yang saya kerjakan.</span>
-        <span data-i18n-en>Learn more about me, my skills, and the tools I work with.</span>
+        <span data-i18n-id>Software Engineer dengan 4+ tahun pengalaman membangun sistem SaaS multi-tenant.</span>
+        <span data-i18n-en>Software Engineer with 4+ years of experience building multi-tenant SaaS systems.</span>
       </p>
     </div>
 
     <div class="space-y-6 text-text-muted dark:text-slate-400 leading-relaxed scroll-reveal">
       <p>
-        <span data-i18n-id>Hai! Saya <strong class="text-text dark:text-slate-200">{site.name}</strong>, developer yang bersemangat membangun aplikasi web yang bersih dan skalabel. Saya senang bekerja dengan teknologi modern seperti Laravel, React, dan berbagai tool lainnya di ekosistem web.</span>
-        <span data-i18n-en>Hi! I'm <strong class="text-text dark:text-slate-200">{site.name}</strong>, a developer passionate about building clean, scalable web applications. I enjoy working with modern stacks like Laravel, React, and various other tools in the web ecosystem.</span>
+        <span data-i18n-id>Hai! Saya <strong class="text-text dark:text-slate-200">{site.author}</strong>, Fullstack Software Engineer yang berspesialisasi dalam arsitektur SaaS berbasis Laravel. Saya memiliki pengalaman 4+ tahun merancang dan membangun sistem multi-tenant, payment gateway, serta platform bisnis yang terintegrasi dengan infrastruktur jaringan (Mikrotik API).</span>
+        <span data-i18n-en>Hi! I'm <strong class="text-text dark:text-slate-200">{site.author}</strong>, a Fullstack Software Engineer specializing in Laravel-based SaaS architecture. I have 4+ years of experience designing and building multi-tenant systems, payment gateways, and business platforms integrated with network infrastructure (Mikrotik API).</span>
       </p>
       <p>
-        <span data-i18n-id>Saya percaya menulis kode yang tidak hanya fungsional, tapi juga mudah dipelihara dan terdokumentasi dengan baik. Di waktu luang, saya suka berbagi yang telah dipelajari melalui tulisan blog dan kontribusi open-source.</span>
-        <span data-i18n-en>I believe in writing code that is not only functional but also maintainable and well-documented. When I'm not coding, I like sharing what I've learned through blog posts and open-source contributions.</span>
+        <span data-i18n-id>Saya telah mengembangkan 34+ proyek profesional mulai dari sistem POS, payment hub, WMS, HRIS, hingga aplikasi cross-platform. Fokus utama saya adalah membangun sistem yang skalabel, aman, dan mudah dipelihara untuk kebutuhan bisnis nyata.</span>
+        <span data-i18n-en>I've developed 34+ professional projects ranging from POS systems, payment hubs, WMS, HRIS, to cross-platform applications. My primary focus is building scalable, secure, and maintainable systems for real business needs.</span>
       </p>
     </div>
 
     <!-- Skills -->
     <div class="mt-16 scroll-reveal" style="transition-delay: 0.1s">
       <h2 class="text-xl font-bold text-text dark:text-white">
-        <span data-i18n-id>Keahlian & Alat</span><span data-i18n-en>Skills & Tools</span>
+        <span data-i18n-id>Keahlian & Teknologi</span><span data-i18n-en>Skills & Technologies</span>
       </h2>
-      <div class="mt-4 flex flex-wrap gap-2">
-        {[
-          'Laravel', 'React', 'TypeScript', 'PHP', 'JavaScript',
-          'Tailwind CSS', 'PostgreSQL', 'MySQL', 'Docker', 'Git',
-          'Node.js', 'REST APIs', 'Linux', 'Astro',
-        ].map((skill) => (
-          <span class="rounded-full border border-border dark:border-slate-600 bg-surface dark:bg-slate-800 px-3 py-1 text-sm font-medium text-text dark:text-slate-200">
-            {skill}
-          </span>
-        ))}
+      <div class="mt-6 space-y-6">
+        <!-- Backend -->
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-accent mb-2">Backend</h3>
+          <div class="flex flex-wrap gap-2">
+            {['PHP', 'Laravel', 'MySQL', 'REST API', 'Livewire', 'Queue/Jobs'].map((skill) => (
+              <span class="rounded-full border border-border dark:border-slate-600 bg-surface dark:bg-slate-800 px-3 py-1 text-sm font-medium text-text dark:text-slate-200">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+        <!-- Frontend -->
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-accent mb-2">Frontend</h3>
+          <div class="flex flex-wrap gap-2">
+            {['JavaScript', 'TypeScript', 'Tailwind CSS', 'Bootstrap', 'Alpine.js', 'Blade'].map((skill) => (
+              <span class="rounded-full border border-border dark:border-slate-600 bg-surface dark:bg-slate-800 px-3 py-1 text-sm font-medium text-text dark:text-slate-200">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+        <!-- Cross-Platform & Desktop -->
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-accent mb-2">Cross-Platform & Desktop</h3>
+          <div class="flex flex-wrap gap-2">
+            {['ElectronJS', 'Flutter', 'Ionic', 'Dart', 'Angular'].map((skill) => (
+              <span class="rounded-full border border-border dark:border-slate-600 bg-surface dark:bg-slate-800 px-3 py-1 text-sm font-medium text-text dark:text-slate-200">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+        <!-- Integrations & Infrastructure -->
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-accent mb-2">
+            <span data-i18n-id>Integrasi & Infrastruktur</span><span data-i18n-en>Integrations & Infrastructure</span>
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {['Mikrotik API', 'Tripay', 'QRIS', 'Midtrans', 'Git', 'Linux', 'Docker', 'Nginx'].map((skill) => (
+              <span class="rounded-full border border-border dark:border-slate-600 bg-surface dark:bg-slate-800 px-3 py-1 text-sm font-medium text-text dark:text-slate-200">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- About section extras -->
+    <!-- What I Do -->
     <div class="mt-16 scroll-reveal" style="transition-delay: 0.2s">
       <h2 class="text-xl font-bold text-text dark:text-white">
-        <span data-i18n-id>Apa yang Saya Kerjakan</span><span data-i18n-en>What I Do</span>
+        <span data-i18n-id>Spesialisasi</span><span data-i18n-en>Specializations</span>
       </h2>
       <div class="mt-4 grid gap-4 sm:grid-cols-2">
         <div class="rounded-xl border border-border dark:border-slate-700 bg-white dark:bg-slate-800 p-5 transition-all hover:shadow-md hover:-translate-y-0.5">
           <h3 class="font-semibold text-text dark:text-slate-200">
-            <span data-i18n-id>Pengembangan Full Stack</span><span data-i18n-en>Full Stack Development</span>
+            <span data-i18n-id>Arsitektur SaaS Multi-Tenant</span><span data-i18n-en>Multi-Tenant SaaS Architecture</span>
           </h3>
           <p class="mt-2 text-sm text-text-muted dark:text-slate-400">
-            <span data-i18n-id>Pengembangan aplikasi web dari ujung ke ujung, dari desain database hingga tampilan frontend yang pixel-perfect.</span>
-            <span data-i18n-en>End-to-end web application development from database design to pixel-perfect frontends.</span>
+            <span data-i18n-id>Merancang sistem SaaS dengan isolasi data per tenant, role management, dan skalabilitas horizontal.</span>
+            <span data-i18n-en>Designing SaaS systems with per-tenant data isolation, role management, and horizontal scalability.</span>
           </p>
         </div>
         <div class="rounded-xl border border-border dark:border-slate-700 bg-white dark:bg-slate-800 p-5 transition-all hover:shadow-md hover:-translate-y-0.5">
           <h3 class="font-semibold text-text dark:text-slate-200">
-            <span data-i18n-id>Menulis Teknis</span><span data-i18n-en>Technical Writing</span>
+            <span data-i18n-id>Integrasi Payment Gateway</span><span data-i18n-en>Payment Gateway Integration</span>
           </h3>
           <p class="mt-2 text-sm text-text-muted dark:text-slate-400">
-            <span data-i18n-id>Berbagi pengetahuan melalui tulisan blog, dokumentasi, dan tutorial.</span>
-            <span data-i18n-en>Sharing knowledge through blog posts, documentation, and tutorials.</span>
+            <span data-i18n-id>Membangun sistem pembayaran terintegrasi Tripay, QRIS, dan Midtrans dengan auto-reconciliation.</span>
+            <span data-i18n-en>Building payment systems integrated with Tripay, QRIS, and Midtrans with auto-reconciliation.</span>
           </p>
         </div>
         <div class="rounded-xl border border-border dark:border-slate-700 bg-white dark:bg-slate-800 p-5 transition-all hover:shadow-md hover:-translate-y-0.5">
           <h3 class="font-semibold text-text dark:text-slate-200">
-            <span data-i18n-id>Desain API</span><span data-i18n-en>API Design</span>
+            <span data-i18n-id>Sistem Berbasis Jaringan</span><span data-i18n-en>Network-Connected Systems</span>
           </h3>
           <p class="mt-2 text-sm text-text-muted dark:text-slate-400">
-            <span data-i18n-id>Merancang dan membangun RESTful API yang bersih, terdokumentasi, dan mudah digunakan.</span>
-            <span data-i18n-en>Designing and building RESTful APIs that are clean, well-documented, and easy to consume.</span>
+            <span data-i18n-id>Platform ISP, voucher WiFi hotspot, dan manajemen bandwidth terintegrasi Mikrotik API.</span>
+            <span data-i18n-en>ISP platforms, WiFi hotspot vouchers, and bandwidth management integrated with Mikrotik API.</span>
           </p>
         </div>
         <div class="rounded-xl border border-border dark:border-slate-700 bg-white dark:bg-slate-800 p-5 transition-all hover:shadow-md hover:-translate-y-0.5">
           <h3 class="font-semibold text-text dark:text-slate-200">
-            <span data-i18n-id>DevOps & Deployment</span><span data-i18n-en>DevOps & Deployment</span>
+            <span data-i18n-id>Aplikasi Desktop & Mobile</span><span data-i18n-en>Desktop & Mobile Apps</span>
           </h3>
           <p class="mt-2 text-sm text-text-muted dark:text-slate-400">
-            <span data-i18n-id>Menyiapkan CI/CD pipeline, kontainerisasi dengan Docker, dan manajemen server.</span>
-            <span data-i18n-en>Setting up CI/CD pipelines, containerization with Docker, and server management.</span>
+            <span data-i18n-id>Aplikasi desktop dengan ElectronJS dan mobile cross-platform menggunakan Flutter & Ionic.</span>
+            <span data-i18n-en>Desktop applications with ElectronJS and cross-platform mobile apps using Flutter & Ionic.</span>
           </p>
         </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="mt-16 scroll-reveal" style="transition-delay: 0.3s">
+      <h2 class="text-xl font-bold text-text dark:text-white">
+        <span data-i18n-id>Sertifikasi & Pelatihan</span><span data-i18n-en>Certifications & Training</span>
+      </h2>
+      <div class="mt-4 space-y-3">
+        {[
+          { name: 'Learn the Fundamental Steps to Become a Web Programmer', org: 'Hacktiv8', year: '2022' },
+          { name: 'HTML Course', org: 'Sololearn', year: '2022' },
+          { name: 'PHP Course', org: 'Sololearn', year: '2022' },
+          { name: 'Python for Beginners', org: 'Sololearn', year: '2022' },
+          { name: 'Python (Basic) Certificate', org: 'HackerRank', year: '2022' },
+          { name: 'BAPAREKRAF Developer Day 2022', org: 'Kemenparekraf RI', year: '2022' },
+          { name: 'Laravel Web Programming', org: 'Camp404', year: '2021' },
+          { name: 'Junior Web Programmer', org: 'Badan Nasional Sertifikasi Profesi (BNSP)', year: '2021' },
+          { name: 'BAPAREKRAF Developer Day 2020', org: 'Kemenparekraf RI', year: '2020' },
+          { name: 'NDG Linux Essentials', org: 'Cisco Networking Academy', year: '2018' },
+          { name: 'CCNA Routing and Switching', org: 'Cisco Networking Academy', year: '2018' },
+        ].map((cert) => (
+          <div class="flex items-start gap-4 rounded-lg border border-border dark:border-slate-700 bg-white dark:bg-slate-800 p-4 transition-all hover:shadow-sm">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-text dark:text-slate-200 text-sm">{cert.name}</h3>
+              <p class="text-xs text-text-muted dark:text-slate-400">{cert.org} · {cert.year}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>

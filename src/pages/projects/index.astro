@@ -12,25 +12,52 @@ const enMap = new Map(
 const allProjects = allEntries
   .filter((p) => !isEnVariant(p.id))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+
+const categories = [
+  { key: 'all', labelId: 'Semua', labelEn: 'All' },
+  { key: 'saas', labelId: 'SaaS', labelEn: 'SaaS' },
+  { key: 'ecommerce', labelId: 'E-Commerce', labelEn: 'E-Commerce' },
+  { key: 'logistics', labelId: 'Logistik', labelEn: 'Logistics' },
+  { key: 'crossplatform', labelId: 'Cross-Platform', labelEn: 'Cross-Platform' },
+  { key: 'simulation', labelId: 'Simulasi', labelEn: 'Simulation' },
+  { key: 'company-profile', labelId: 'Company Profile', labelEn: 'Company Profile' },
+];
 ---
 
-<BaseLayout title={`Projects — ${site.title}`} description="A collection of projects I've built and contributed to.">
+<BaseLayout title={`Projects — ${site.title}`} description="A collection of 23+ professional projects across SaaS, e-commerce, logistics, and more.">
   <section class="mx-auto max-w-5xl px-6 py-16 md:py-24">
     <div class="animate-fade-in-up">
       <h1 class="text-3xl font-extrabold tracking-tight text-text dark:text-white sm:text-4xl">
         <span data-i18n-id>Proyek</span><span data-i18n-en>Projects</span>
       </h1>
       <p class="mt-3 text-text-muted dark:text-slate-400">
-        <span data-i18n-id>Kumpulan proyek yang saya bangun — masing-masing dengan cerita, tantangan, dan solusinya sendiri.</span>
-        <span data-i18n-en>A collection of projects I've built — each with its own story, challenges, and solutions.</span>
+        <span data-i18n-id>23+ proyek profesional — dari sistem SaaS, e-commerce, logistik, hingga company profile.</span>
+        <span data-i18n-en>23+ professional projects — from SaaS systems, e-commerce, logistics, to company profiles.</span>
       </p>
     </div>
 
-    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- Category Filter Tabs -->
+    <div class="mt-8 flex flex-wrap gap-2 animate-fade-in-up" style="animation-delay: 0.1s" id="filter-tabs">
+      {categories.map((cat) => (
+        <button
+          data-filter={cat.key}
+          class:list={[
+            'filter-tab rounded-full px-4 py-1.5 text-sm font-medium transition-all',
+            cat.key === 'all'
+              ? 'bg-primary text-white shadow-sm'
+              : 'border border-border dark:border-slate-600 text-text-muted dark:text-slate-400 hover:border-primary hover:text-primary'
+          ]}
+        >
+          <span data-i18n-id>{cat.labelId}</span><span data-i18n-en>{cat.labelEn}</span>
+        </button>
+      ))}
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="projects-grid">
       {allProjects.map((project, i) => {
         const en = enMap.get(project.id);
         return (
-          <div class="scroll-reveal" style={`transition-delay: ${i * 0.1}s`}>
+          <div class="project-card scroll-reveal" data-category={project.data.category} style={`transition-delay: ${i * 0.05}s`}>
             <ProjectCard
               title={project.data.title}
               summary={project.data.summary}
@@ -53,3 +80,33 @@ const allProjects = allEntries
     )}
   </section>
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.filter-tab');
+    const cards = document.querySelectorAll<HTMLElement>('.project-card');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const filter = tab.dataset.filter;
+
+        // Update active tab
+        tabs.forEach((t) => {
+          t.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+          t.classList.add('border', 'border-border', 'dark:border-slate-600', 'text-text-muted', 'dark:text-slate-400');
+        });
+        tab.classList.add('bg-primary', 'text-white', 'shadow-sm');
+        tab.classList.remove('border', 'border-border', 'dark:border-slate-600', 'text-text-muted', 'dark:text-slate-400');
+
+        // Filter cards
+        cards.forEach((card) => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

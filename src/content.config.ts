@@ -6,6 +6,7 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     summary: z.string(),
+    category: z.enum(['saas', 'ecommerce', 'logistics', 'crossplatform', 'simulation', 'company-profile']).default('saas'),
     role: z.string().optional(),
     timeframe: z.string().optional(),
     stack: z.array(z.string()).default([]),
