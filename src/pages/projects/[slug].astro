@@ -97,6 +97,20 @@ const dateEn = project.data.publishedAt.toLocaleDateString('en-US', {
           <span data-i18n-id>Kode Sumber</span><span data-i18n-en>Source Code</span>
         </a>
       )}
+      {project.data.domain && (
+        <a
+          href={project.data.domain}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
+        >
+          <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
+          </svg>
+          <span data-i18n-id>Kunjungi Website</span><span data-i18n-en>Visit Website</span>
+        </a>
+      )}
       {project.data.demo && (
         <a
           href={project.data.demo}

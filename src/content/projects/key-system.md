@@ -6,6 +6,7 @@ role: "Lead Developer"
 timeframe: "2026"
 stack: ["Laravel", "PHP", "JavaScript", "MySQL", "REST API"]
 github: "https://github.com/vonsofh/key-system"
+domain: "https://key-system.vonsofh.cv/"
 featured: false
 publishedAt: 2026-03-09
 tags: ["License Management", "Serial Key", "SaaS", "API"]
