@@ -5,7 +5,6 @@ category: "ecommerce"
 role: "Fullstack Developer"
 timeframe: "2021"
 stack: ["PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap", "Mikrotik API", "Tripay"]
-github: "https://github.com/vonsogt/voucher_wifi"
 featured: false
 publishedAt: 2021-09-01
 tags: ["E-Commerce", "WiFi Voucher", "Mikrotik", "Payment Gateway"]

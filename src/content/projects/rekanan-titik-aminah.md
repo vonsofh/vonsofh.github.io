@@ -5,7 +5,6 @@ category: "company-profile"
 role: "Fullstack Developer"
 timeframe: "2021"
 stack: ["Laravel", "Voyager", "PHP", "JavaScript", "HTML", "CSS", "MySQL"]
-github: "https://github.com/vreedom-base/rekanan-notarisppat"
 featured: false
 publishedAt: 2021-02-01
 tags: ["Notary", "Company Profile", "Voyager", "Laravel"]
@@ -13,7 +12,7 @@ tags: ["Notary", "Company Profile", "Voyager", "Laravel"]
 
 ## Tentang Proyek
 
-REKANAN TITIK AMINAH adalah website rekanan untuk Notaris PPAT Titik Aminah. Partner bisa melihat daftar klien dan detail rekanan dari satu portal. **5 stars** di GitHub.
+REKANAN TITIK AMINAH adalah website rekanan untuk Notaris PPAT Titik Aminah. Partner bisa melihat daftar klien dan detail rekanan dari satu portal.
 
 ### Fitur Utama
 

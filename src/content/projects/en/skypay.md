@@ -5,7 +5,6 @@ category: "saas"
 role: "Fullstack Developer"
 timeframe: "2021"
 stack: ["PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap", "Mikrotik API", "Tripay", "REST API"]
-github: "https://github.com/skynetwork-id/skypay.id"
 featured: true
 publishedAt: 2021-12-01
 tags: ["Payment", "ISP", "Network Management", "Mikrotik"]

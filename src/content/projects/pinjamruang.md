@@ -5,7 +5,6 @@ category: "logistics"
 role: "Fullstack Developer"
 timeframe: "2021"
 stack: ["Laravel", "PHP", "JavaScript", "jQuery", "HTML", "CSS", "Blade", "MySQL"]
-github: "https://github.com/vonsogt/pinjam-ruang"
 featured: false
 publishedAt: 2021-08-01
 tags: ["Room Booking", "Campus", "Workflow", "Open Source"]
@@ -13,7 +12,7 @@ tags: ["Room Booking", "Campus", "Workflow", "Open Source"]
 
 ## Tentang Proyek
 
-PINJAMRUANG adalah aplikasi peminjaman ruangan kampus berbasis web. Dengan 3 role (admin/TU, dosen, mahasiswa), sistem menyederhanakan alur peminjaman ruangan dengan approval bertingkat. **41+ stars** di GitHub.
+PINJAMRUANG adalah aplikasi peminjaman ruangan kampus berbasis web. Dengan 3 role (admin/TU, dosen, mahasiswa), sistem menyederhanakan alur peminjaman ruangan dengan approval bertingkat.
 
 ### Fitur Utama
 

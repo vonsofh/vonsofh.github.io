@@ -5,7 +5,6 @@ category: "saas"
 role: "Fullstack Developer"
 timeframe: "2022"
 stack: ["Laravel", "PHP", "JavaScript", "jQuery", "HTML", "CSS", "Blade", "MySQL", "JWT"]
-github: "https://github.com/vonsogt/laravel-hris-ydb"
 featured: false
 publishedAt: 2022-04-01
 tags: ["HRIS", "SaaS", "HR", "JWT"]

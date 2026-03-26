@@ -5,7 +5,6 @@ category: "company-profile"
 role: "Fullstack Developer"
 timeframe: "2021"
 stack: ["PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap", "Voyager"]
-github: "https://github.com/vreedom-base/rekanan-notarisppat"
 featured: false
 publishedAt: 2021-02-01
 tags: ["Company Profile", "Notary", "Voyager", "CMS"]
@@ -13,7 +12,7 @@ tags: ["Company Profile", "Notary", "Voyager", "CMS"]
 
 ## About the Project
 
-REKANAN TITIK AMINAH is a partner website for a notary office, built with Laravel Voyager CMS. Features partner directory, service listings, and client inquiry management. Repository has 5 stars on GitHub.
+REKANAN TITIK AMINAH is a partner website for a notary office, built with Laravel Voyager CMS. Features partner directory, service listings, and client inquiry management.
 
 ### Key Features
 

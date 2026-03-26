@@ -5,7 +5,6 @@ category: "crossplatform"
 role: "Fullstack Developer"
 timeframe: "2020"
 stack: ["Ionic", "Angular", "TypeScript", "JavaScript", "HTML", "CSS", "PHP", "Laravel", "NodeJS", "MySQL"]
-github: "https://github.com/vonsogt/ePerpustakaan"
 featured: false
 publishedAt: 2020-02-01
 tags: ["Library", "Cross-Platform", "Ionic", "Angular", "REST API"]

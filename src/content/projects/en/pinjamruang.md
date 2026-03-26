@@ -5,7 +5,6 @@ category: "logistics"
 role: "Fullstack Developer"
 timeframe: "2021"
 stack: ["PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap"]
-github: "https://github.com/vonsogt/pinjam-ruang"
 featured: false
 publishedAt: 2021-08-01
 tags: ["Room Booking", "Approval Workflow", "Scheduling"]
@@ -13,7 +12,7 @@ tags: ["Room Booking", "Approval Workflow", "Scheduling"]
 
 ## About the Project
 
-PINJAMRUANG is a room booking system featuring a 3-tier approval workflow. Manages meeting room reservations with schedule conflict detection and departmental access control. Repository has 41 stars on GitHub.
+PINJAMRUANG is a room booking system featuring a 3-tier approval workflow. Manages meeting room reservations with schedule conflict detection and departmental access control.
 
 ### Key Features
 

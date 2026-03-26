@@ -5,7 +5,6 @@ category: "ecommerce"
 role: "Lead Developer"
 timeframe: "2021–Sekarang"
 stack: ["Laravel", "PHP", "JavaScript", "jQuery", "HTML", "CSS", "Blade", "MySQL", "Mikrotik API", "Tripay"]
-github: "https://github.com/vonsogt/voucher_wifi"
 featured: false
 publishedAt: 2021-09-01
 tags: ["WiFi", "Mikrotik", "Voucher", "Payment Gateway"]
