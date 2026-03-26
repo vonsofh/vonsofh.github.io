@@ -5,7 +5,6 @@ category: "saas"
 role: "Fullstack Developer"
 timeframe: "2021"
 stack: ["PHP", "Laravel", "MySQL", "JavaScript", "AdminLTE", "Bootstrap"]
-github: "https://github.com/vonsogt/simple-crm"
 featured: false
 publishedAt: 2021-07-01
 tags: ["CRM", "AdminLTE", "Multi-Language", "Pipeline"]
@@ -13,7 +12,7 @@ tags: ["CRM", "AdminLTE", "Multi-Language", "Pipeline"]
 
 ## About the Project
 
-SIMPLE CRM is a Customer Relationship Management system with AdminLTE dashboard and multi-language support. Manages clients, deals, and sales pipeline. Repository has 7 stars on GitHub.
+SIMPLE CRM is a Customer Relationship Management system with AdminLTE dashboard and multi-language support. Manages clients, deals, and sales pipeline.
 
 ### Key Features
 

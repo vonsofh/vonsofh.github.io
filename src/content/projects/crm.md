@@ -5,7 +5,6 @@ category: "saas"
 role: "Fullstack Developer"
 timeframe: "2021"
 stack: ["Laravel", "PHP", "JavaScript", "jQuery", "HTML", "CSS", "Blade", "MySQL", "JWT"]
-github: "https://github.com/vonsogt/simple-crm"
 featured: false
 publishedAt: 2021-07-01
 tags: ["CRM", "SaaS", "Laravel", "Open Source"]
@@ -13,7 +12,7 @@ tags: ["CRM", "SaaS", "Laravel", "Open Source"]
 
 ## Tentang Proyek
 
-SIMPLE CRM adalah aplikasi Customer Relationship Management untuk mencatat data perusahaan dan karyawan. Dibangun dengan tampilan AdminLTE yang intuitif. **7 stars** di GitHub.
+SIMPLE CRM adalah aplikasi Customer Relationship Management untuk mencatat data perusahaan dan karyawan. Dibangun dengan tampilan AdminLTE yang intuitif.
 
 ### Fitur Utama
 

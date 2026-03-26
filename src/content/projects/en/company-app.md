@@ -5,7 +5,6 @@ category: "saas"
 role: "Fullstack Developer"
 timeframe: "2021"
 stack: ["PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap", "JWT", "REST API"]
-github: "https://github.com/vonsogt/company-app"
 featured: false
 publishedAt: 2021-07-01
 tags: ["Company App", "JWT", "CRM Integration", "REST API"]

@@ -5,7 +5,6 @@ category: "company-profile"
 role: "Fullstack Developer"
 timeframe: "2026"
 stack: ["Laravel", "PHP", "JavaScript", "MySQL", "Tailwind CSS", "SEO"]
-github: "https://github.com/vonsofh/discoverbatam.com"
 domain: "https://discoverbatam.com/"
 featured: false
 publishedAt: 2026-03-03

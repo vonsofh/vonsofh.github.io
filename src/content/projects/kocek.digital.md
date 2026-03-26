@@ -5,7 +5,6 @@ category: "saas"
 role: "Lead Developer"
 timeframe: "2026"
 stack: ["Laravel", "PHP", "JavaScript", "MySQL", "REST API"]
-github: "https://github.com/vonsofh/kocek.digital"
 domain: "https://kocek.digital/"
 featured: true
 publishedAt: 2026-03-13

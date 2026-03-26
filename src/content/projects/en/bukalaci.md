@@ -5,7 +5,6 @@ category: "saas"
 role: "Lead Developer"
 timeframe: "2025"
 stack: ["Laravel", "PHP", "JavaScript", "MySQL", "REST API", "Tailwind CSS"]
-github: "https://github.com/vonsofh/bukalaci"
 domain: "https://bukalaci.com/"
 featured: true
 publishedAt: 2025-12-17

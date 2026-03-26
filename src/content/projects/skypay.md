@@ -5,7 +5,6 @@ category: "saas"
 role: "Lead Developer"
 timeframe: "2021–Sekarang"
 stack: ["Laravel", "PHP", "JavaScript", "jQuery", "HTML", "CSS", "Blade", "MySQL", "Tripay API"]
-github: "https://github.com/skynetwork-id/skypay.id"
 featured: true
 publishedAt: 2021-12-01
 tags: ["Payment Gateway", "SaaS", "Fintech", "ISP"]

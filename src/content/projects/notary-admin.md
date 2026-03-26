@@ -5,7 +5,6 @@ category: "saas"
 role: "Fullstack Developer"
 timeframe: "2021"
 stack: ["Laravel", "PHP", "JavaScript", "jQuery", "HTML", "CSS", "Blade", "MySQL"]
-github: "https://github.com/vreedom-base/laravel-notarisppat"
 featured: false
 publishedAt: 2021-05-01
 tags: ["Notary", "Administration", "Automation", "Laravel"]

@@ -5,7 +5,6 @@ category: "saas"
 role: "Fullstack Developer"
 timeframe: "2025"
 stack: ["Laravel", "PHP", "JavaScript", "jQuery", "HTML", "CSS", "MySQL"]
-github: "https://github.com/vonsofh/ptmaruwa-admin"
 featured: false
 publishedAt: 2025-06-01
 tags: ["Stock Management", "SaaS", "Admin", "Inventory"]

@@ -10,7 +10,6 @@ const projects = defineCollection({
     role: z.string().optional(),
     timeframe: z.string().optional(),
     stack: z.array(z.string()).default([]),
-    github: z.string().url().optional(),
     demo: z.string().url().optional(),
     domain: z.string().url().optional(),
     image: z.string().optional(),
