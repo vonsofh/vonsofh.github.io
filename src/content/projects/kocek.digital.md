@@ -3,11 +3,11 @@ title: "KOCEK.DIGITAL"
 summary: "Platform keuangan digital — manajemen saldo, transaksi, dan pembayaran terintegrasi untuk pengguna individual maupun bisnis."
 category: "saas"
 role: "Lead Developer"
-timeframe: "2025"
+timeframe: "2026"
 stack: ["Laravel", "PHP", "JavaScript", "MySQL", "REST API"]
 github: "https://github.com/vonsofh/kocek.digital"
 featured: true
-publishedAt: 2025-01-01
+publishedAt: 2026-03-13
 tags: ["Fintech", "Digital Wallet", "Payment", "SaaS"]
 ---
 

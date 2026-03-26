@@ -3,11 +3,11 @@ title: "KOCEK.DIGITAL"
 summary: "Digital finance platform — balance management, transactions, and integrated payments for individuals and businesses."
 category: "saas"
 role: "Lead Developer"
-timeframe: "2025"
+timeframe: "2026"
 stack: ["Laravel", "PHP", "JavaScript", "MySQL", "REST API"]
 github: "https://github.com/vonsofh/kocek.digital"
 featured: true
-publishedAt: 2025-01-01
+publishedAt: 2026-03-13
 tags: ["Fintech", "Digital Wallet", "Payment", "SaaS"]
 ---
 

@@ -3,11 +3,11 @@ title: "DISCOVER BATAM"
 summary: "Company profile and Batam tourism guide — directory of destinations, dining, hotels, and travel information for visitors."
 category: "company-profile"
 role: "Fullstack Developer"
-timeframe: "2025"
+timeframe: "2026"
 stack: ["Laravel", "PHP", "JavaScript", "MySQL", "Tailwind CSS", "SEO"]
 github: "https://github.com/vonsofh/discoverbatam.com"
 featured: false
-publishedAt: 2025-01-01
+publishedAt: 2026-03-03
 tags: ["Company Profile", "Tourism", "Batam", "Directory"]
 ---
 

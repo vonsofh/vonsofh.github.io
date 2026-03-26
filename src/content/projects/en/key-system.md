@@ -3,11 +3,11 @@ title: "KEY SYSTEM"
 summary: "License and serial key management system — generate, validate, and distribute activation keys for software or digital services."
 category: "saas"
 role: "Lead Developer"
-timeframe: "2025"
+timeframe: "2026"
 stack: ["Laravel", "PHP", "JavaScript", "MySQL", "REST API"]
 github: "https://github.com/vonsofh/key-system"
 featured: false
-publishedAt: 2025-01-01
+publishedAt: 2026-03-09
 tags: ["License Management", "Serial Key", "SaaS", "API"]
 ---
 

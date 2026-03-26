@@ -7,7 +7,7 @@ timeframe: "2025"
 stack: ["Laravel", "PHP", "JavaScript", "MySQL", "REST API", "Tailwind CSS"]
 github: "https://github.com/vonsofh/bukalaci"
 featured: true
-publishedAt: 2025-06-01
+publishedAt: 2025-12-17
 tags: ["SaaS", "Multi-Tenant", "POS", "E-Commerce"]
 ---
 
